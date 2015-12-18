@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		042A8BDE1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A8BDB1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.m */; };
+		042A8BDF1C23A8F70054C74B /* PDFAlterRecordTabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A8BDD1C23A8F70054C74B /* PDFAlterRecordTabel.m */; };
+		042A8BE21C23A9660054C74B /* MyCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A8BE11C23A9660054C74B /* MyCoreData.m */; };
+		0468086E1C1EAF1200423C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468086D1C1EAF1200423C16 /* main.m */; };
+		046808711C1EAF1200423C16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046808701C1EAF1200423C16 /* AppDelegate.m */; };
+		046808741C1EAF1200423C16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046808731C1EAF1200423C16 /* ViewController.m */; };
+		046808771C1EAF1200423C16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046808751C1EAF1200423C16 /* Main.storyboard */; };
+		0468087A1C1EAF1200423C16 /* JJPDF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 046808781C1EAF1200423C16 /* JJPDF.xcdatamodeld */; };
+		0468087C1C1EAF1200423C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0468087B1C1EAF1200423C16 /* Assets.xcassets */; };
+		0468087F1C1EAF1200423C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468087D1C1EAF1200423C16 /* LaunchScreen.storyboard */; };
+		0468088A1C1EAF1200423C16 /* JJPDFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046808891C1EAF1200423C16 /* JJPDFTests.m */; };
+		046808951C1EAF1200423C16 /* JJPDFUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046808941C1EAF1200423C16 /* JJPDFUITests.m */; };
+		046808A51C1EB0B700423C16 /* JJPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046808A41C1EB0B700423C16 /* JJPDFView.m */; };
+		046808A71C1EB9CF00423C16 /* 6666.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 046808A61C1EB9CF00423C16 /* 6666.pdf */; };
+		049A09801C23E4160017EF44 /* oss_sdk.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 049A097F1C23E4160017EF44 /* oss_sdk.pdf */; };
+		049A09841C23EDD10017EF44 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 049A09811C23EDD10017EF44 /* 3.png */; };
+		049A09851C23EDD10017EF44 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 049A09821C23EDD10017EF44 /* 2.png */; };
+		049A09861C23EDD10017EF44 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 049A09831C23EDD10017EF44 /* 1.png */; };
+		04E7568F1C21374000113207 /* JJGainImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7568E1C21374000113207 /* JJGainImage.m */; };
+		04FA12661C22584B00D5D617 /* JJPDFShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA12641C22584B00D5D617 /* JJPDFShowViewController.m */; };
+		04FA12671C22584B00D5D617 /* JJPDFShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FA12651C22584B00D5D617 /* JJPDFShowViewController.xib */; };
+		04FA12721C228D0D00D5D617 /* JJPDFAlterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA12711C228D0D00D5D617 /* JJPDFAlterImageView.m */; };
+		04FA12761C228DB800D5D617 /* JJPDFAlterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA12741C228DB800D5D617 /* JJPDFAlterViewController.m */; };
+		04FA12771C228DB800D5D617 /* JJPDFAlterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FA12751C228DB800D5D617 /* JJPDFAlterViewController.xib */; };
+		04FA127A1C22929500D5D617 /* JJPDFAlterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA12791C22929500D5D617 /* JJPDFAlterModel.m */; };
+		04FA127E1C22A66200D5D617 /* JJPDFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA127C1C22A66200D5D617 /* JJPDFMainViewController.m */; };
+		04FA127F1C22A66200D5D617 /* JJPDFMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FA127D1C22A66200D5D617 /* JJPDFMainViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		046808861C1EAF1200423C16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 046808611C1EAF1200423C16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 046808681C1EAF1200423C16;
+			remoteInfo = JJPDF;
+		};
+		046808911C1EAF1200423C16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 046808611C1EAF1200423C16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 046808681C1EAF1200423C16;
+			remoteInfo = JJPDF;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		042A8BDA1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PDFAlterRecordTabel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		042A8BDB1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PDFAlterRecordTabel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		042A8BDC1C23A8F70054C74B /* PDFAlterRecordTabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFAlterRecordTabel.h; sourceTree = "<group>"; };
+		042A8BDD1C23A8F70054C74B /* PDFAlterRecordTabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFAlterRecordTabel.m; sourceTree = "<group>"; };
+		042A8BE01C23A9660054C74B /* MyCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoreData.h; sourceTree = "<group>"; };
+		042A8BE11C23A9660054C74B /* MyCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoreData.m; sourceTree = "<group>"; };
+		046808691C1EAF1200423C16 /* JJPDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJPDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0468086D1C1EAF1200423C16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0468086F1C1EAF1200423C16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		046808701C1EAF1200423C16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		046808721C1EAF1200423C16 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		046808731C1EAF1200423C16 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		046808761C1EAF1200423C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		046808791C1EAF1200423C16 /* JJPDF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JJPDF.xcdatamodel; sourceTree = "<group>"; };
+		0468087B1C1EAF1200423C16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0468087E1C1EAF1200423C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		046808801C1EAF1200423C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046808851C1EAF1200423C16 /* JJPDFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JJPDFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		046808891C1EAF1200423C16 /* JJPDFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPDFTests.m; sourceTree = "<group>"; };
+		0468088B1C1EAF1200423C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046808901C1EAF1200423C16 /* JJPDFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JJPDFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		046808941C1EAF1200423C16 /* JJPDFUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPDFUITests.m; sourceTree = "<group>"; };
+		046808961C1EAF1200423C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046808A31C1EB0B700423C16 /* JJPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPDFView.h; sourceTree = "<group>"; };
+		046808A41C1EB0B700423C16 /* JJPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPDFView.m; sourceTree = "<group>"; };
+		046808A61C1EB9CF00423C16 /* 6666.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 6666.pdf; sourceTree = "<group>"; };
+		049A097F1C23E4160017EF44 /* oss_sdk.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = oss_sdk.pdf; sourceTree = "<group>"; };
+		049A09811C23EDD10017EF44 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		049A09821C23EDD10017EF44 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		049A09831C23EDD10017EF44 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		04D5C29E1C200293006BDDD4 /* JJPDFViewConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPDFViewConstant.h; sourceTree = "<group>"; };
+		04E7568D1C21374000113207 /* JJGainImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJGainImage.h; sourceTree = "<group>"; };
+		04E7568E1C21374000113207 /* JJGainImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJGainImage.m; sourceTree = "<group>"; };
+		04FA12631C22584B00D5D617 /* JJPDFShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPDFShowViewController.h; sourceTree = "<group>"; };
+		04FA12641C22584B00D5D617 /* JJPDFShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPDFShowViewController.m; sourceTree = "<group>"; };
+		04FA12651C22584B00D5D617 /* JJPDFShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJPDFShowViewController.xib; sourceTree = "<group>"; };
+		04FA12701C228D0D00D5D617 /* JJPDFAlterImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPDFAlterImageView.h; sourceTree = "<group>"; };
+		04FA12711C228D0D00D5D617 /* JJPDFAlterImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPDFAlterImageView.m; sourceTree = "<group>"; };
+		04FA12731C228DB800D5D617 /* JJPDFAlterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPDFAlterViewController.h; sourceTree = "<group>"; };
+		04FA12741C228DB800D5D617 /* JJPDFAlterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPDFAlterViewController.m; sourceTree = "<group>"; };
+		04FA12751C228DB800D5D617 /* JJPDFAlterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJPDFAlterViewController.xib; sourceTree = "<group>"; };
+		04FA12781C22929500D5D617 /* JJPDFAlterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPDFAlterModel.h; sourceTree = "<group>"; };
+		04FA12791C22929500D5D617 /* JJPDFAlterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPDFAlterModel.m; sourceTree = "<group>"; };
+		04FA127B1C22A66200D5D617 /* JJPDFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPDFMainViewController.h; sourceTree = "<group>"; };
+		04FA127C1C22A66200D5D617 /* JJPDFMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPDFMainViewController.m; sourceTree = "<group>"; };
+		04FA127D1C22A66200D5D617 /* JJPDFMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJPDFMainViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		046808661C1EAF1200423C16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046808821C1EAF1200423C16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0468088D1C1EAF1200423C16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		046808601C1EAF1200423C16 = {
+			isa = PBXGroup;
+			children = (
+				046808A61C1EB9CF00423C16 /* 6666.pdf */,
+				049A097F1C23E4160017EF44 /* oss_sdk.pdf */,
+				049A09811C23EDD10017EF44 /* 3.png */,
+				049A09821C23EDD10017EF44 /* 2.png */,
+				049A09831C23EDD10017EF44 /* 1.png */,
+				0468086B1C1EAF1200423C16 /* JJPDF */,
+				046808881C1EAF1200423C16 /* JJPDFTests */,
+				046808931C1EAF1200423C16 /* JJPDFUITests */,
+				0468086A1C1EAF1200423C16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0468086A1C1EAF1200423C16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				046808691C1EAF1200423C16 /* JJPDF.app */,
+				046808851C1EAF1200423C16 /* JJPDFTests.xctest */,
+				046808901C1EAF1200423C16 /* JJPDFUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0468086B1C1EAF1200423C16 /* JJPDF */ = {
+			isa = PBXGroup;
+			children = (
+				046808A21C1EB04F00423C16 /* JJPDFClass */,
+				0468086F1C1EAF1200423C16 /* AppDelegate.h */,
+				046808701C1EAF1200423C16 /* AppDelegate.m */,
+				046808721C1EAF1200423C16 /* ViewController.h */,
+				046808731C1EAF1200423C16 /* ViewController.m */,
+				046808751C1EAF1200423C16 /* Main.storyboard */,
+				0468087B1C1EAF1200423C16 /* Assets.xcassets */,
+				0468087D1C1EAF1200423C16 /* LaunchScreen.storyboard */,
+				046808801C1EAF1200423C16 /* Info.plist */,
+				046808781C1EAF1200423C16 /* JJPDF.xcdatamodeld */,
+				0468086C1C1EAF1200423C16 /* Supporting Files */,
+			);
+			path = JJPDF;
+			sourceTree = "<group>";
+		};
+		0468086C1C1EAF1200423C16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0468086D1C1EAF1200423C16 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		046808881C1EAF1200423C16 /* JJPDFTests */ = {
+			isa = PBXGroup;
+			children = (
+				046808891C1EAF1200423C16 /* JJPDFTests.m */,
+				0468088B1C1EAF1200423C16 /* Info.plist */,
+			);
+			path = JJPDFTests;
+			sourceTree = "<group>";
+		};
+		046808931C1EAF1200423C16 /* JJPDFUITests */ = {
+			isa = PBXGroup;
+			children = (
+				046808941C1EAF1200423C16 /* JJPDFUITests.m */,
+				046808961C1EAF1200423C16 /* Info.plist */,
+			);
+			path = JJPDFUITests;
+			sourceTree = "<group>";
+		};
+		046808A21C1EB04F00423C16 /* JJPDFClass */ = {
+			isa = PBXGroup;
+			children = (
+				04FA127B1C22A66200D5D617 /* JJPDFMainViewController.h */,
+				04FA127C1C22A66200D5D617 /* JJPDFMainViewController.m */,
+				04FA127D1C22A66200D5D617 /* JJPDFMainViewController.xib */,
+				04FA12631C22584B00D5D617 /* JJPDFShowViewController.h */,
+				04FA12641C22584B00D5D617 /* JJPDFShowViewController.m */,
+				04FA12651C22584B00D5D617 /* JJPDFShowViewController.xib */,
+				04FA12731C228DB800D5D617 /* JJPDFAlterViewController.h */,
+				04FA12741C228DB800D5D617 /* JJPDFAlterViewController.m */,
+				04FA12751C228DB800D5D617 /* JJPDFAlterViewController.xib */,
+				04D5C29E1C200293006BDDD4 /* JJPDFViewConstant.h */,
+				046808A31C1EB0B700423C16 /* JJPDFView.h */,
+				046808A41C1EB0B700423C16 /* JJPDFView.m */,
+				04E7568D1C21374000113207 /* JJGainImage.h */,
+				04E7568E1C21374000113207 /* JJGainImage.m */,
+				04FA12701C228D0D00D5D617 /* JJPDFAlterImageView.h */,
+				04FA12711C228D0D00D5D617 /* JJPDFAlterImageView.m */,
+				04FA12781C22929500D5D617 /* JJPDFAlterModel.h */,
+				04FA12791C22929500D5D617 /* JJPDFAlterModel.m */,
+				042A8BDA1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.h */,
+				042A8BDB1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.m */,
+				042A8BDC1C23A8F70054C74B /* PDFAlterRecordTabel.h */,
+				042A8BDD1C23A8F70054C74B /* PDFAlterRecordTabel.m */,
+				042A8BE01C23A9660054C74B /* MyCoreData.h */,
+				042A8BE11C23A9660054C74B /* MyCoreData.m */,
+			);
+			path = JJPDFClass;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		046808681C1EAF1200423C16 /* JJPDF */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 046808991C1EAF1200423C16 /* Build configuration list for PBXNativeTarget "JJPDF" */;
+			buildPhases = (
+				046808651C1EAF1200423C16 /* Sources */,
+				046808661C1EAF1200423C16 /* Frameworks */,
+				046808671C1EAF1200423C16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JJPDF;
+			productName = JJPDF;
+			productReference = 046808691C1EAF1200423C16 /* JJPDF.app */;
+			productType = "com.apple.product-type.application";
+		};
+		046808841C1EAF1200423C16 /* JJPDFTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0468089C1C1EAF1200423C16 /* Build configuration list for PBXNativeTarget "JJPDFTests" */;
+			buildPhases = (
+				046808811C1EAF1200423C16 /* Sources */,
+				046808821C1EAF1200423C16 /* Frameworks */,
+				046808831C1EAF1200423C16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				046808871C1EAF1200423C16 /* PBXTargetDependency */,
+			);
+			name = JJPDFTests;
+			productName = JJPDFTests;
+			productReference = 046808851C1EAF1200423C16 /* JJPDFTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0468088F1C1EAF1200423C16 /* JJPDFUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0468089F1C1EAF1200423C16 /* Build configuration list for PBXNativeTarget "JJPDFUITests" */;
+			buildPhases = (
+				0468088C1C1EAF1200423C16 /* Sources */,
+				0468088D1C1EAF1200423C16 /* Frameworks */,
+				0468088E1C1EAF1200423C16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				046808921C1EAF1200423C16 /* PBXTargetDependency */,
+			);
+			name = JJPDFUITests;
+			productName = JJPDFUITests;
+			productReference = 046808901C1EAF1200423C16 /* JJPDFUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		046808611C1EAF1200423C16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = DJJ;
+				TargetAttributes = {
+					046808681C1EAF1200423C16 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					046808841C1EAF1200423C16 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 046808681C1EAF1200423C16;
+					};
+					0468088F1C1EAF1200423C16 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 046808681C1EAF1200423C16;
+					};
+				};
+			};
+			buildConfigurationList = 046808641C1EAF1200423C16 /* Build configuration list for PBXProject "JJPDF" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 046808601C1EAF1200423C16;
+			productRefGroup = 0468086A1C1EAF1200423C16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				046808681C1EAF1200423C16 /* JJPDF */,
+				046808841C1EAF1200423C16 /* JJPDFTests */,
+				0468088F1C1EAF1200423C16 /* JJPDFUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		046808671C1EAF1200423C16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				049A09861C23EDD10017EF44 /* 1.png in Resources */,
+				0468087F1C1EAF1200423C16 /* LaunchScreen.storyboard in Resources */,
+				049A09801C23E4160017EF44 /* oss_sdk.pdf in Resources */,
+				049A09851C23EDD10017EF44 /* 2.png in Resources */,
+				0468087C1C1EAF1200423C16 /* Assets.xcassets in Resources */,
+				049A09841C23EDD10017EF44 /* 3.png in Resources */,
+				04FA127F1C22A66200D5D617 /* JJPDFMainViewController.xib in Resources */,
+				04FA12771C228DB800D5D617 /* JJPDFAlterViewController.xib in Resources */,
+				046808A71C1EB9CF00423C16 /* 6666.pdf in Resources */,
+				046808771C1EAF1200423C16 /* Main.storyboard in Resources */,
+				04FA12671C22584B00D5D617 /* JJPDFShowViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046808831C1EAF1200423C16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0468088E1C1EAF1200423C16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		046808651C1EAF1200423C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FA127E1C22A66200D5D617 /* JJPDFMainViewController.m in Sources */,
+				0468087A1C1EAF1200423C16 /* JJPDF.xcdatamodeld in Sources */,
+				046808741C1EAF1200423C16 /* ViewController.m in Sources */,
+				04FA12761C228DB800D5D617 /* JJPDFAlterViewController.m in Sources */,
+				04E7568F1C21374000113207 /* JJGainImage.m in Sources */,
+				046808711C1EAF1200423C16 /* AppDelegate.m in Sources */,
+				04FA12721C228D0D00D5D617 /* JJPDFAlterImageView.m in Sources */,
+				0468086E1C1EAF1200423C16 /* main.m in Sources */,
+				042A8BE21C23A9660054C74B /* MyCoreData.m in Sources */,
+				04FA127A1C22929500D5D617 /* JJPDFAlterModel.m in Sources */,
+				04FA12661C22584B00D5D617 /* JJPDFShowViewController.m in Sources */,
+				046808A51C1EB0B700423C16 /* JJPDFView.m in Sources */,
+				042A8BDF1C23A8F70054C74B /* PDFAlterRecordTabel.m in Sources */,
+				042A8BDE1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046808811C1EAF1200423C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0468088A1C1EAF1200423C16 /* JJPDFTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0468088C1C1EAF1200423C16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046808951C1EAF1200423C16 /* JJPDFUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		046808871C1EAF1200423C16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 046808681C1EAF1200423C16 /* JJPDF */;
+			targetProxy = 046808861C1EAF1200423C16 /* PBXContainerItemProxy */;
+		};
+		046808921C1EAF1200423C16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 046808681C1EAF1200423C16 /* JJPDF */;
+			targetProxy = 046808911C1EAF1200423C16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		046808751C1EAF1200423C16 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				046808761C1EAF1200423C16 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0468087D1C1EAF1200423C16 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0468087E1C1EAF1200423C16 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		046808971C1EAF1200423C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		046808981C1EAF1200423C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0468089A1C1EAF1200423C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JJPDF/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.gt2002.www.JJPDF;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0468089B1C1EAF1200423C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JJPDF/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.gt2002.www.JJPDF;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0468089D1C1EAF1200423C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JJPDFTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.gt2002.www.JJPDFTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JJPDF.app/JJPDF";
+			};
+			name = Debug;
+		};
+		0468089E1C1EAF1200423C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JJPDFTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.gt2002.www.JJPDFTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JJPDF.app/JJPDF";
+			};
+			name = Release;
+		};
+		046808A01C1EAF1200423C16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JJPDFUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.gt2002.www.JJPDFUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JJPDF;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		046808A11C1EAF1200423C16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JJPDFUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.gt2002.www.JJPDFUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JJPDF;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		046808641C1EAF1200423C16 /* Build configuration list for PBXProject "JJPDF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046808971C1EAF1200423C16 /* Debug */,
+				046808981C1EAF1200423C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		046808991C1EAF1200423C16 /* Build configuration list for PBXNativeTarget "JJPDF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0468089A1C1EAF1200423C16 /* Debug */,
+				0468089B1C1EAF1200423C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0468089C1C1EAF1200423C16 /* Build configuration list for PBXNativeTarget "JJPDFTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0468089D1C1EAF1200423C16 /* Debug */,
+				0468089E1C1EAF1200423C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0468089F1C1EAF1200423C16 /* Build configuration list for PBXNativeTarget "JJPDFUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046808A01C1EAF1200423C16 /* Debug */,
+				046808A11C1EAF1200423C16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		046808781C1EAF1200423C16 /* JJPDF.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				046808791C1EAF1200423C16 /* JJPDF.xcdatamodel */,
+			);
+			currentVersion = 046808791C1EAF1200423C16 /* JJPDF.xcdatamodel */;
+			path = JJPDF.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 046808611C1EAF1200423C16 /* Project object */;
+}

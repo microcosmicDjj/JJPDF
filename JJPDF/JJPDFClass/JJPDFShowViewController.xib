@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJPDFShowViewController">
+            <connections>
+                <outlet property="imageView" destination="F0I-vU-vfV" id="fN7-1r-Y8z"/>
+                <outlet property="pdfView" destination="stF-xw-xXQ" id="OxE-XH-B4j"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F0I-vU-vfV">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stF-xw-xXQ" customClass="JJPDFView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="stF-xw-xXQ" secondAttribute="bottom" id="IUG-P2-n4h"/>
+                <constraint firstAttribute="trailing" secondItem="F0I-vU-vfV" secondAttribute="trailing" id="Y9h-dY-zME"/>
+                <constraint firstAttribute="bottom" secondItem="F0I-vU-vfV" secondAttribute="bottom" id="drH-U1-lPe"/>
+                <constraint firstItem="F0I-vU-vfV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eZE-oM-S6P"/>
+                <constraint firstAttribute="trailing" secondItem="stF-xw-xXQ" secondAttribute="trailing" id="eaB-ib-oxz"/>
+                <constraint firstItem="stF-xw-xXQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jp1-Z1-YsP"/>
+                <constraint firstItem="stF-xw-xXQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kgn-5f-cIP"/>
+                <constraint firstItem="F0I-vU-vfV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rRA-Rl-bPj"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="277.5" y="284.5"/>
+        </view>
+    </objects>
+</document>
