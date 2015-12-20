@@ -21,7 +21,7 @@
 
 - (IBAction)readPdf:(id)sender {
     JJPDFMainViewController *mainVC = [[JJPDFMainViewController alloc] init];
-    mainVC.filePath = [[NSBundle mainBundle] pathForResource:@"oss_sdk" ofType:@"pdf"];
+    mainVC.filePath = [[NSBundle mainBundle] pathForResource:@"6666" ofType:@"pdf"];
     [self presentViewController:mainVC animated:YES completion:^{
         
     }];
