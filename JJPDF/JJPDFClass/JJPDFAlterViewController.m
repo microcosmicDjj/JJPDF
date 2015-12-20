@@ -121,24 +121,35 @@
 //    /*文件写入路径**/
 //    NSString *filePath = [docDir stringByAppendingString:[NSString stringWithFormat:@"/%d.png",(int)[[NSDate date] timeIntervalSince1970]]];
 
+    NSLog(@"_page = %ld",_page);
     
     UIImage *image = [JJGainImage gainImage:self.pdfAlterImageView];
     
     NSString *imageFilePath = [JJGainImage writeImage:image];
 
-    /*持久化存储**/
-    PDFAlterRecordTabel *pdfTabel = [self.coreData insertNewObject:@"PDFAlterRecordTabel"];
-    pdfTabel.pdfImageFilePath = imageFilePath;
-    pdfTabel.pdfFilePath = [JJGainImage fileNameWithFilePath:_filePath];
-    pdfTabel.pdfPage = [NSNumber numberWithInteger:_page];
+    NSArray *tabels = [self.coreData selectObject:@"PDFAlterRecordTabel" condition:[NSPredicate predicateWithFormat:@"pdfFilePath = %@ and pdfPage = %@",[JJGainImage fileNameWithFilePath:_filePath],[NSNumber numberWithInteger:_page]]];
     
-    [self.coreData save];
-    
-    //调用代理方法
-    [self.dalegate alterViewControlleReloaddataImage:image];
+    if (tabels.count > 0) {
+        /*更新**/
+        PDFAlterRecordTabel *pdfTabel = tabels.lastObject;
+        pdfTabel.pdfFilePath = [JJGainImage fileNameWithFilePath:_filePath];
+        pdfTabel.pdfImageFilePath = imageFilePath;
+        pdfTabel.pdfPage = [NSNumber numberWithInteger:_page];
+        
+        [self.coreData save];
+    } else {
+        /*持久化存储**/
+        PDFAlterRecordTabel *pdfTabel = [self.coreData insertNewObject:@"PDFAlterRecordTabel"];
+        pdfTabel.pdfImageFilePath = imageFilePath;
+        pdfTabel.pdfFilePath = [JJGainImage fileNameWithFilePath:_filePath];
+        pdfTabel.pdfPage = [NSNumber numberWithInteger:_page];
+        
+        [self.coreData save];
+    }
 
     [self dismissViewControllerAnimated:YES completion:^{
-        
+        //调用代理方法
+        [self.dalegate alterViewControlleReloaddataImage:image];
     }];
 }
 //删除全部笔画

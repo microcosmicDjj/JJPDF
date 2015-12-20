@@ -56,7 +56,6 @@
     //最后页数
     _maxPage = CGPDFDocumentGetNumberOfPages(_pdfDocument);
     
-    
     JJPDFShowViewController *pdfShowVC = [self PDFShowViewControllerFrameIndex:_pageIndex];
     
     NSArray *pages = @[pdfShowVC];
@@ -97,13 +96,14 @@
 }
 
 /*
- *  MARK:pageViewController代理
+ *  pdfaltervc代理方法
  */
 - (void) alterViewControlleReloaddataImage:(UIImage *) image
 {
     JJPDFShowViewController *showVC = self.pageViewController.viewControllers.lastObject;
-    showVC.pdfView.hidden = YES;
-    showVC.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = showVC.view.bounds;
+    [showVC.view addSubview:imageView];
 }
 
 /*
@@ -111,23 +111,34 @@
  */
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    JJPDFShowViewController *pdfVC = (JJPDFShowViewController *)viewController;
-    if (pdfVC.page == 1) {
+
+    JJPDFShowViewController *showVC = (JJPDFShowViewController *)viewController;
+    if (showVC.page < 2) {
         return nil;
     }
-    _pageIndex--;
-    
-    return [self PDFShowViewControllerFrameIndex:_pageIndex];
+    _pageIndex = showVC.page - 1;
+    return [self PDFShowViewControllerFrameIndex:(showVC.page - 1)];
 }
 
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    JJPDFShowViewController *pdfVC = (JJPDFShowViewController *)viewController;
-    if (pdfVC.page >= _maxPage) {
+    JJPDFShowViewController *showVC = (JJPDFShowViewController *)viewController;
+
+    if (showVC.page >= _maxPage) {
         return nil;
     }
-    _pageIndex ++;
-    return [self PDFShowViewControllerFrameIndex:_pageIndex];
+    _pageIndex = showVC.page + 1;
+    return [self PDFShowViewControllerFrameIndex:(showVC.page + 1)];
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    JJPDFShowViewController *showVc = (JJPDFShowViewController *)previousViewControllers.lastObject;
+//当completed = NO时，表示翻页并没有成功，所以将_pageIndex 重置为初始值，避免bug
+    if (!completed) {
+        _pageIndex = showVc.page;
+    }
+    NSLog(@"showVc.page = %ld  completed = %d",showVc.page,completed);
 }
 
 /*
@@ -151,6 +162,7 @@
         UIImage *image = [UIImage imageWithContentsOfFile:[docDir stringByAppendingString:tabel.pdfImageFilePath]];
 
         pdfVC.image = image;
+        pdfVC.page = index;
         pdfVC.pdfView.hidden = YES;
     } else{
         pdfVC.pdfDocument = _pdfDocument;
