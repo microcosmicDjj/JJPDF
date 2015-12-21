@@ -11,6 +11,7 @@
 #import "PDFAlterRecordTabel.h"
 #import "JJGainImage.h"
 #import "MyCoreData.h"
+#import "JJTrendsTextView.h"
 
 @interface JJPDFAlterViewController ()
 
@@ -19,7 +20,9 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLayoutConstraint;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIView *headView;
+
 @property (strong, nonatomic) MyCoreData *coreData;
+@property (strong, nonatomic) NSMutableArray *trendsTextViews;
 
 @end
 
@@ -84,22 +87,28 @@
     UIButton *btn = sender;
     [self alterColor:btn.backgroundColor];
 }
-- (IBAction)cyanColor:(id)sender {
-    UIButton *btn = sender;
-    [self alterColor:btn.backgroundColor];
-}
-- (IBAction)orangeColor:(id)sender {
-    UIButton *btn = sender;
-    [self alterColor:btn.backgroundColor];
-}
 - (IBAction)noKnowColor:(id)sender {
-    UIButton *btn = sender;
-    [self alterColor:btn.backgroundColor];
+    JJTrendsTextView *textView = self.trendsTextViews.lastObject;
+    if (textView) {
+        [textView removeFromSuperview];
+        [self.trendsTextViews removeObject:textView];
+    }
 }
+
+//添加文字框
 - (IBAction)blackColor:(id)sender {
-    UIButton *btn = sender;
-    [self alterColor:btn.backgroundColor];
+
+    JJTrendsTextView *trendsText = [[JJTrendsTextView alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+    [trendsText upward];
+    trendsText.clearRimBool = NO;
+    trendsText.textColor = self.pdfAlterImageView.lineColor;
+
+    trendsText.center = self.pdfAlterImageView.center;
+    [_pdfAlterImageView addSubview:trendsText];
+    [self.trendsTextViews addObject:trendsText];
+    
 }
+
 //设置颜色
 - (void) alterColor:(UIColor *) color
 {
@@ -121,7 +130,18 @@
 //    /*文件写入路径**/
 //    NSString *filePath = [docDir stringByAppendingString:[NSString stringWithFormat:@"/%d.png",(int)[[NSDate date] timeIntervalSince1970]]];
 
-    NSLog(@"_page = %ld",_page);
+
+    for (JJTrendsTextView *textView in self.trendsTextViews) {
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:textView.frame];
+        label.text = textView.text;
+        label.textColor = textView.textColor;
+        label.font = textView.font;
+        label.numberOfLines = 0;
+        [_pdfAlterImageView addSubview:label];
+        
+        [textView removeFromSuperview];
+    }
     
     UIImage *image = [JJGainImage gainImage:self.pdfAlterImageView];
     
@@ -167,6 +187,14 @@
         _coreData = [[MyCoreData alloc] init];
     }
     return _coreData;
+}
+
+- (NSMutableArray *) trendsTextViews
+{
+    if (!_trendsTextViews) {
+        _trendsTextViews = [[NSMutableArray alloc] init];
+    }
+    return _trendsTextViews;
 }
 
 @end

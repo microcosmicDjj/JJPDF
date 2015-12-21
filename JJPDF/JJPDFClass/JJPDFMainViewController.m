@@ -21,8 +21,7 @@
 
 /*当前页**/
 @property (nonatomic) NSInteger pageIndex;
-///*如果进入编辑界面，那么记录当前界面**/
-//@property (nonatomic, strong) JJPDFShowViewController *pdfShowVC;
+
 /*最大的页数**/
 @property (nonatomic) NSInteger maxPage;
 /*初始化数据操作类**/
