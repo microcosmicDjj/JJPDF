@@ -23,7 +23,6 @@
 		046808A71C1EB9CF00423C16 /* 6666.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 046808A61C1EB9CF00423C16 /* 6666.pdf */; };
 		049A09801C23E4160017EF44 /* oss_sdk.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 049A097F1C23E4160017EF44 /* oss_sdk.pdf */; };
 		049A09841C23EDD10017EF44 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 049A09811C23EDD10017EF44 /* 3.png */; };
-		049A09851C23EDD10017EF44 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 049A09821C23EDD10017EF44 /* 2.png */; };
 		049A09861C23EDD10017EF44 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 049A09831C23EDD10017EF44 /* 1.png */; };
 		04CDF76B1C279E8200AC5BC0 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDF74D1C279E8200AC5BC0 /* IQNSArray+Sort.m */; };
 		04CDF76C1C279E8200AC5BC0 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDF74F1C279E8200AC5BC0 /* IQUIView+Hierarchy.m */; };
@@ -37,6 +36,7 @@
 		04CDF7741C279E8200AC5BC0 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDF7651C279E8200AC5BC0 /* IQToolbar.m */; };
 		04CDF7751C279E8200AC5BC0 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CDF7671C279E8200AC5BC0 /* IQUIView+IQKeyboardToolbar.m */; };
 		04CDF7761C279E8200AC5BC0 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04CDF76A1C279E8200AC5BC0 /* IQKeyboardManager.bundle */; };
+		04CDF7781C27A3AA00AC5BC0 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CDF7771C27A3AA00AC5BC0 /* 2.png */; };
 		04E536951C267C4C0074FDBA /* JJTrendsTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E536901C267C4C0074FDBA /* JJTrendsTextView.m */; };
 		04E536961C267C4C0074FDBA /* UIView+LayoutMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E536921C267C4C0074FDBA /* UIView+LayoutMethods.m */; };
 		04E7568F1C21374000113207 /* JJGainImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7568E1C21374000113207 /* JJGainImage.m */; };
@@ -96,7 +96,6 @@
 		046808A61C1EB9CF00423C16 /* 6666.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 6666.pdf; sourceTree = "<group>"; };
 		049A097F1C23E4160017EF44 /* oss_sdk.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = oss_sdk.pdf; sourceTree = "<group>"; };
 		049A09811C23EDD10017EF44 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		049A09821C23EDD10017EF44 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		049A09831C23EDD10017EF44 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		04CDF74C1C279E8200AC5BC0 /* IQNSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
 		04CDF74D1C279E8200AC5BC0 /* IQNSArray+Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQNSArray+Sort.m"; sourceTree = "<group>"; };
@@ -124,6 +123,7 @@
 		04CDF7671C279E8200AC5BC0 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		04CDF7681C279E8200AC5BC0 /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
 		04CDF76A1C279E8200AC5BC0 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		04CDF7771C27A3AA00AC5BC0 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		04D5C29E1C200293006BDDD4 /* JJPDFViewConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPDFViewConstant.h; sourceTree = "<group>"; };
 		04E5368F1C267C4C0074FDBA /* JJTrendsTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTrendsTextView.h; sourceTree = "<group>"; };
 		04E536901C267C4C0074FDBA /* JJTrendsTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTrendsTextView.m; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				046808A61C1EB9CF00423C16 /* 6666.pdf */,
 				049A097F1C23E4160017EF44 /* oss_sdk.pdf */,
 				049A09811C23EDD10017EF44 /* 3.png */,
-				049A09821C23EDD10017EF44 /* 2.png */,
+				04CDF7771C27A3AA00AC5BC0 /* 2.png */,
 				049A09831C23EDD10017EF44 /* 1.png */,
 				0468086B1C1EAF1200423C16 /* JJPDF */,
 				046808881C1EAF1200423C16 /* JJPDFTests */,
@@ -464,9 +464,9 @@
 				0468087F1C1EAF1200423C16 /* LaunchScreen.storyboard in Resources */,
 				04CDF7761C279E8200AC5BC0 /* IQKeyboardManager.bundle in Resources */,
 				049A09801C23E4160017EF44 /* oss_sdk.pdf in Resources */,
-				049A09851C23EDD10017EF44 /* 2.png in Resources */,
 				0468087C1C1EAF1200423C16 /* Assets.xcassets in Resources */,
 				049A09841C23EDD10017EF44 /* 3.png in Resources */,
+				04CDF7781C27A3AA00AC5BC0 /* 2.png in Resources */,
 				04FA127F1C22A66200D5D617 /* JJPDFMainViewController.xib in Resources */,
 				04FA12771C228DB800D5D617 /* JJPDFAlterViewController.xib in Resources */,
 				046808A71C1EB9CF00423C16 /* 6666.pdf in Resources */,
