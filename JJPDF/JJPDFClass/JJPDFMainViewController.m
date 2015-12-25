@@ -80,6 +80,7 @@
     [btn addTarget:self action:@selector(btnTouch:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+//MARK:进入编辑界面
 - (void) btnTouch:(UIButton *) btn
 {
     UIImage *image = [JJGainImage gainImage:[self PDFShowViewControllerFrameIndex:_pageIndex].view];
@@ -88,6 +89,7 @@
     pdfAlterVC.image = image;
     pdfAlterVC.page = _pageIndex;
     pdfAlterVC.filePath = _filePath;
+    pdfAlterVC.pdfDocument = _pdfDocument;
     
     [self presentViewController:pdfAlterVC animated:YES completion:^{
         
@@ -152,9 +154,7 @@
     if (tabels.count > 0) {
         PDFAlterRecordTabel *tabel = tabels.lastObject;
 
-        //拿到沙盒路径
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *docDir = [paths objectAtIndex:0];
+        NSString *docDir = [JJGainImage documentDirectoryStr];
 
         NSLog(@"%@",[docDir stringByAppendingString:tabel.pdfImageFilePath]);
         //通过文件名

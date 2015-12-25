@@ -9,10 +9,13 @@
 
 #import "JJPDFAlterImageView.h"
 #import "JJPDFAlterModel.h"
+#import "JJTrendsTextView.h"
+#import "JJGainImage.h"
 
 @interface JJPDFAlterImageView ()
 
 @property (nonatomic, strong) NSMutableArray *alterModels;
+@property (nonatomic, strong) NSMutableArray *trendsTextViews;
 
 @end
 
@@ -43,6 +46,8 @@
     self.userInteractionEnabled = YES;
     CGRect rect = [UIScreen mainScreen].bounds;
     self.bounds = rect;
+    //初始值设置为假
+    _cleanRecord = NO;
 }
 
 /*
@@ -103,16 +108,50 @@
     }
 }
 
+//清除一条线
 - (void) back
 {
     [self removeLastObject];
     [self setNeedsDisplay];
 }
 
+//清除全部线
 - (void) allBack
 {
     [self.alterModels removeAllObjects];
     [self setNeedsDisplay];
+}
+
+//添加输入框
+- (void) addTextView
+{
+    JJTrendsTextView *trendsText = [[JJTrendsTextView alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+    [trendsText upward];
+    trendsText.clearRimBool = NO;
+    trendsText.textColor = self.lineColor;
+    
+    trendsText.center = self.center;
+    [self addSubview:trendsText];
+    [self.trendsTextViews addObject:trendsText];
+}
+
+/*清除一个输入框**/
+- (void) cleanTextView
+{
+    JJTrendsTextView *textView = self.trendsTextViews.lastObject;
+    
+    if (textView) {
+        [textView removeFromSuperview];
+        [self.trendsTextViews removeObject:textView];
+    }
+}
+/*清除所有的输入框**/
+- (void) cleanAllTextView
+{
+    for (JJTrendsTextView *textView in self.trendsTextViews) {
+        [textView removeFromSuperview];
+    }
+    [self.trendsTextViews removeAllObjects];
 }
 
 /**
@@ -132,6 +171,30 @@
         [self.alterModels removeObject:model];
     }
 }
+/*保存图片**/
+- (UIImage *) saveImage
+{
+    NSLog(@"self.alterModels.count = %ld",self.alterModels.count);
+    //如果没有任何操作直接返回nil
+    if (self.trendsTextViews.count == 0 && self.alterModels.count == 0) {
+        return nil;
+    }
+
+    for (JJTrendsTextView *textView in self.trendsTextViews) {
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:textView.frame];
+        label.text = textView.text;
+        label.textColor = textView.textColor;
+        label.font = textView.font;
+        label.numberOfLines = 0;
+        [self addSubview:label];
+        
+        [textView removeFromSuperview];
+    }
+
+    return [JJGainImage gainImage:self];
+}
+
 
 /*
  * MARK: 懒加载
@@ -144,6 +207,14 @@
     return _alterModels;
 }
 
+- (NSMutableArray *) trendsTextViews
+{
+    if (!_trendsTextViews) {
+        _trendsTextViews = [[NSMutableArray alloc] init];
+    }
+    
+    return _trendsTextViews;
+}
 
 - (void) setImage:(UIImage *)image
 {

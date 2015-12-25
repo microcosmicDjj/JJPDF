@@ -10,7 +10,7 @@
 
 @implementation JJGainImage
 /*
- * MARK: 获取截图
+ * MARK: 获取view的全屏截图
  */
 + (UIImage *) gainImage:(UIView *) view
 {
@@ -27,14 +27,33 @@
     
     return image;
 }
+
+/*
+ * MARK: 获取view的全屏截图
+ */
++ (UIImage *) gainImage:(UIView *) view frame:(CGRect) rect
+{
+    CGSize size = view.bounds.size;
+    
+    UIGraphicsBeginImageContextWithOptions(size, YES, 0);
+    
+    [view drawViewHierarchyInRect:rect afterScreenUpdates:YES];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+
 /*
  * MARK: 写入文件
  */
 + (NSString *) writeImage:(UIImage *) image
 {
     //保存在沙盒的Documents目录
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docDir = [paths objectAtIndex:0];
+    NSString *docDir = [self documentDirectoryStr];
     
     NSString *dateStr = [NSString stringWithFormat:@"/%d.png",(int)[[NSDate date] timeIntervalSince1970]];
     
@@ -45,6 +64,12 @@
     [imgData writeToFile:filePath atomically:YES];
     
     return dateStr;
+}
+
++ (NSString *) documentDirectoryStr
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [paths objectAtIndex:0];
 }
 /*
  * MARK: 保留文件名

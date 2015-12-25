@@ -40,6 +40,9 @@
 		04E536951C267C4C0074FDBA /* JJTrendsTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E536901C267C4C0074FDBA /* JJTrendsTextView.m */; };
 		04E536961C267C4C0074FDBA /* UIView+LayoutMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E536921C267C4C0074FDBA /* UIView+LayoutMethods.m */; };
 		04E7568F1C21374000113207 /* JJGainImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7568E1C21374000113207 /* JJGainImage.m */; };
+		04F82E981C2BCD4400330DB8 /* RIButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F82E931C2BCD4400330DB8 /* RIButtonItem.m */; };
+		04F82E991C2BCD4400330DB8 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F82E951C2BCD4400330DB8 /* UIActionSheet+Blocks.m */; };
+		04F82E9A1C2BCD4400330DB8 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F82E971C2BCD4400330DB8 /* UIAlertView+Blocks.m */; };
 		04FA12661C22584B00D5D617 /* JJPDFShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA12641C22584B00D5D617 /* JJPDFShowViewController.m */; };
 		04FA12671C22584B00D5D617 /* JJPDFShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FA12651C22584B00D5D617 /* JJPDFShowViewController.xib */; };
 		04FA12721C228D0D00D5D617 /* JJPDFAlterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA12711C228D0D00D5D617 /* JJPDFAlterImageView.m */; };
@@ -131,6 +134,12 @@
 		04E536921C267C4C0074FDBA /* UIView+LayoutMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutMethods.m"; sourceTree = "<group>"; };
 		04E7568D1C21374000113207 /* JJGainImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJGainImage.h; sourceTree = "<group>"; };
 		04E7568E1C21374000113207 /* JJGainImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJGainImage.m; sourceTree = "<group>"; };
+		04F82E921C2BCD4400330DB8 /* RIButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIButtonItem.h; sourceTree = "<group>"; };
+		04F82E931C2BCD4400330DB8 /* RIButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIButtonItem.m; sourceTree = "<group>"; };
+		04F82E941C2BCD4400330DB8 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		04F82E951C2BCD4400330DB8 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		04F82E961C2BCD4400330DB8 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		04F82E971C2BCD4400330DB8 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		04FA12631C22584B00D5D617 /* JJPDFShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPDFShowViewController.h; sourceTree = "<group>"; };
 		04FA12641C22584B00D5D617 /* JJPDFShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPDFShowViewController.m; sourceTree = "<group>"; };
 		04FA12651C22584B00D5D617 /* JJPDFShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJPDFShowViewController.xib; sourceTree = "<group>"; };
@@ -199,6 +208,7 @@
 		0468086B1C1EAF1200423C16 /* JJPDF */ = {
 			isa = PBXGroup;
 			children = (
+				04F82E911C2BCD4400330DB8 /* UIAlertView-Blocks */,
 				04CDF74A1C279E8200AC5BC0 /* IQKeyBoardManager */,
 				046808A21C1EB04F00423C16 /* JJPDFClass */,
 				0468086F1C1EAF1200423C16 /* AppDelegate.h */,
@@ -357,6 +367,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		04F82E911C2BCD4400330DB8 /* UIAlertView-Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				04F82E921C2BCD4400330DB8 /* RIButtonItem.h */,
+				04F82E931C2BCD4400330DB8 /* RIButtonItem.m */,
+				04F82E941C2BCD4400330DB8 /* UIActionSheet+Blocks.h */,
+				04F82E951C2BCD4400330DB8 /* UIActionSheet+Blocks.m */,
+				04F82E961C2BCD4400330DB8 /* UIAlertView+Blocks.h */,
+				04F82E971C2BCD4400330DB8 /* UIAlertView+Blocks.m */,
+			);
+			path = "UIAlertView-Blocks";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,6 +522,7 @@
 				04CDF76E1C279E8200AC5BC0 /* IQKeyboardManager.m in Sources */,
 				04CDF76F1C279E8200AC5BC0 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				04FA127E1C22A66200D5D617 /* JJPDFMainViewController.m in Sources */,
+				04F82E981C2BCD4400330DB8 /* RIButtonItem.m in Sources */,
 				0468087A1C1EAF1200423C16 /* JJPDF.xcdatamodeld in Sources */,
 				04CDF76D1C279E8200AC5BC0 /* IQUIWindow+Hierarchy.m in Sources */,
 				046808741C1EAF1200423C16 /* ViewController.m in Sources */,
@@ -512,6 +536,7 @@
 				04FA12721C228D0D00D5D617 /* JJPDFAlterImageView.m in Sources */,
 				04E536961C267C4C0074FDBA /* UIView+LayoutMethods.m in Sources */,
 				0468086E1C1EAF1200423C16 /* main.m in Sources */,
+				04F82E991C2BCD4400330DB8 /* UIActionSheet+Blocks.m in Sources */,
 				04CDF7721C279E8200AC5BC0 /* IQBarButtonItem.m in Sources */,
 				04CDF7731C279E8200AC5BC0 /* IQTitleBarButtonItem.m in Sources */,
 				042A8BE21C23A9660054C74B /* MyCoreData.m in Sources */,
@@ -521,6 +546,7 @@
 				046808A51C1EB0B700423C16 /* JJPDFView.m in Sources */,
 				04CDF7711C279E8200AC5BC0 /* IQTextView.m in Sources */,
 				042A8BDF1C23A8F70054C74B /* PDFAlterRecordTabel.m in Sources */,
+				04F82E9A1C2BCD4400330DB8 /* UIAlertView+Blocks.m in Sources */,
 				04CDF76C1C279E8200AC5BC0 /* IQUIView+Hierarchy.m in Sources */,
 				042A8BDE1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.m in Sources */,
 			);

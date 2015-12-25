@@ -21,6 +21,8 @@
 @property (nonatomic, copy) NSString *filePath;
 /*传入页数**/
 @property (nonatomic) NSInteger page;
+/*传入当前的pdf**/
+@property (nonatomic) CGPDFDocumentRef pdfDocument;
 
 @property (nonatomic, weak) id<JJPDFAlterViewControllerDalegate> dalegate;
 

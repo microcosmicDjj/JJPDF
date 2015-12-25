@@ -99,13 +99,12 @@
     } else {
         self.width = _selfW + translation.x;
     }
+    if (self.width < 60) {
+        self.width = 60;
+    }
 
     [self astrict];
-    [self changeSelfSizeWithStringSize];
-    
-    if (self.width < 50) {
-        self.width = 50;
-    }
+    [self changeSelfSizeWithStringSize]; 
     
     if (tap.state == UIGestureRecognizerStateEnded){
         _selfW = self.width;

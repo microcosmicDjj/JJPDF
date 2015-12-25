@@ -12,8 +12,11 @@
 #import "JJGainImage.h"
 #import "MyCoreData.h"
 #import "JJTrendsTextView.h"
+#import "JJPDFShowViewController.h"
+#import "UIAlertView+Blocks.h"
+#import "UIActionSheet+Blocks.h"
 
-@interface JJPDFAlterViewController ()
+@interface JJPDFAlterViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet JJPDFAlterImageView *pdfAlterImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headLayoutConstraint;
@@ -22,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIView *headView;
 
 @property (strong, nonatomic) MyCoreData *coreData;
-@property (strong, nonatomic) NSMutableArray *trendsTextViews;
+
 
 @end
 
@@ -64,7 +67,7 @@
     } else if (tap.view.tag == 1)
     {
         //NSLayoutConstraint 的动画方法，丫的搞这么麻烦
-        _headLayoutConstraint.constant = -49;
+        _headLayoutConstraint.constant = -90;
         _bottomLayoutConstraint.constant = -64;
         
         [_bottomView setNeedsUpdateConstraints];
@@ -87,26 +90,14 @@
     UIButton *btn = sender;
     [self alterColor:btn.backgroundColor];
 }
+//清除一个输入框
 - (IBAction)noKnowColor:(id)sender {
-    JJTrendsTextView *textView = self.trendsTextViews.lastObject;
-    if (textView) {
-        [textView removeFromSuperview];
-        [self.trendsTextViews removeObject:textView];
-    }
+    [self.pdfAlterImageView cleanTextView];
 }
 
 //添加文字框
 - (IBAction)blackColor:(id)sender {
-
-    JJTrendsTextView *trendsText = [[JJTrendsTextView alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    [trendsText upward];
-    trendsText.clearRimBool = NO;
-    trendsText.textColor = self.pdfAlterImageView.lineColor;
-
-    trendsText.center = self.pdfAlterImageView.center;
-    [_pdfAlterImageView addSubview:trendsText];
-    [self.trendsTextViews addObject:trendsText];
-    
+    [self.pdfAlterImageView addTextView];
 }
 
 //设置颜色
@@ -118,35 +109,46 @@
 //返回
 - (IBAction)backVc:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
-        
     }];
 }
 
 //保存操作
 - (IBAction)saveImage:(id)sender {
-    //保存在沙盒的Documents目录
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *docDir = [paths objectAtIndex:0];
-//    /*文件写入路径**/
-//    NSString *filePath = [docDir stringByAppendingString:[NSString stringWithFormat:@"/%d.png",(int)[[NSDate date] timeIntervalSince1970]]];
-
-
-    for (JJTrendsTextView *textView in self.trendsTextViews) {
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:textView.frame];
-        label.text = textView.text;
-        label.textColor = textView.textColor;
-        label.font = textView.font;
-        label.numberOfLines = 0;
-        [_pdfAlterImageView addSubview:label];
-        
-        [textView removeFromSuperview];
+    
+    UIImage *image = [self.pdfAlterImageView saveImage];
+    
+    // 如果没有进行任何操作，就直接返回空，不调用代理方法
+    if (!image) {
+        [self dismissViewControllerAnimated:YES completion:^{
+        }];
+        return;
     }
     
-    UIImage *image = [JJGainImage gainImage:self.pdfAlterImageView];
-    
-    NSString *imageFilePath = [JJGainImage writeImage:image];
+    //如果清空了数据，而没有进行任何操作将进入此方法
+    __weak typeof(self) weakSelf = self;
+    RIButtonItem *leftBtn = [RIButtonItem itemWithLabel:@"取消" action:^{
+        [weakSelf dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }];
+        
+    RIButtonItem *rigthBtn = [RIButtonItem itemWithLabel:@"确认" action:^{
+        [weakSelf saveData:image];
+            
+        [weakSelf dismissViewControllerAnimated:YES completion:^{
+            [weakSelf.dalegate alterViewControlleReloaddataImage:image];
+        }];
+    }];
+        
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"是否确认保存数据" message:nil cancelButtonItem:leftBtn otherButtonItems:rigthBtn, nil];
+    [alertView show];
+}
 
+- (void) saveData:(UIImage *) image
+{
+    // 如果没有进行了操作，则保存至数据库
+    NSString *imageFilePath = [JJGainImage writeImage:image];
+    
     NSArray *tabels = [self.coreData selectObject:@"PDFAlterRecordTabel" condition:[NSPredicate predicateWithFormat:@"pdfFilePath = %@ and pdfPage = %@",[JJGainImage fileNameWithFilePath:_filePath],[NSNumber numberWithInteger:_page]]];
     
     if (tabels.count > 0) {
@@ -166,12 +168,15 @@
         
         [self.coreData save];
     }
-
+    
+    __weak typeof(self) weakSelf = self;
     [self dismissViewControllerAnimated:YES completion:^{
         //调用代理方法
-        [self.dalegate alterViewControlleReloaddataImage:image];
+        [weakSelf.dalegate alterViewControlleReloaddataImage:image];
     }];
+
 }
+
 //删除全部笔画
 - (IBAction)deleteAllLine:(id)sender {
     [self.pdfAlterImageView allBack];
@@ -181,20 +186,87 @@
     [self.pdfAlterImageView back];
 }
 
+//清空笔记
+- (IBAction)clearAllRecord:(id)sender {
+    NSArray *tabels = [self.coreData selectObject:@"PDFAlterRecordTabel" condition:[NSPredicate predicateWithFormat:@"pdfFilePath = %@ and pdfPage = %@",[JJGainImage fileNameWithFilePath:_filePath],[NSNumber numberWithInteger:_page]]];
+    if (tabels.count > 0){
+        [self.coreData deleteObjects:tabels];
+        
+        JJPDFShowViewController *pdfShowVC = [[JJPDFShowViewController alloc] init];
+        pdfShowVC.page = _page;
+        pdfShowVC.pdfDocument = _pdfDocument;
+        
+        self.pdfAlterImageView.image = [JJGainImage gainImage:pdfShowVC.view];
+        //清除了记录
+        self.pdfAlterImageView.cleanRecord = YES;
+    } else {
+        
+        
+    }
+    
+}
+
+- (IBAction)addImage:(id)sender {
+    
+    __weak typeof(self) weakSelf = self;
+    RIButtonItem *photoItem = [RIButtonItem itemWithLabel:@"相册中选取" action:^{
+        [weakSelf setupImagePickerController:UIImagePickerControllerSourceTypePhotoLibrary];
+    }];
+    
+    RIButtonItem *shootItem = [RIButtonItem itemWithLabel:@"拍照" action:^{
+        [weakSelf setupImagePickerController:UIImagePickerControllerSourceTypeCamera];
+    }];
+    
+    RIButtonItem *cancelItem = [RIButtonItem itemWithLabel:@"取消"];
+    
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil cancelButtonItem:cancelItem destructiveButtonItem:nil otherButtonItems:shootItem,photoItem, nil];
+
+    [sheet showInView:self.view];
+}
+
+- (void) setupImagePickerController:(UIImagePickerControllerSourceType) type
+{
+    UIImagePickerControllerSourceType sourceType = type;
+    //如果没有相机的情况下，直接跳到图片选择的界面
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    UIImagePickerController * picker = [[UIImagePickerController alloc]init];
+    
+    picker.delegate = self;
+    
+    picker.allowsEditing=YES;
+    
+    picker.sourceType=sourceType;
+    
+    [self presentViewController:picker animated:YES completion:^{
+        
+    }];
+}
+
+/*
+ * MARK： UIImagePickerController 代理方法
+ */
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo
+{
+    __weak typeof(self) weakSelf = self;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+#warning 今天就写到这里了，明天从这里开始
+    NSLog(@"%@",image);
+}
+
+- (IBAction)delImage:(id)sender {
+}
+
 - (MyCoreData *) coreData
 {
     if (!_coreData) {
         _coreData = [[MyCoreData alloc] init];
     }
     return _coreData;
-}
-
-- (NSMutableArray *) trendsTextViews
-{
-    if (!_trendsTextViews) {
-        _trendsTextViews = [[NSMutableArray alloc] init];
-    }
-    return _trendsTextViews;
 }
 
 @end
