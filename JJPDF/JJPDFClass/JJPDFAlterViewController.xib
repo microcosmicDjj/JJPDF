@@ -11,7 +11,6 @@
                 <outlet property="bottomView" destination="FDb-if-brV" id="bHL-YT-JJj"/>
                 <outlet property="headLayoutConstraint" destination="GMD-mX-tAf" id="AYT-ZY-K8e"/>
                 <outlet property="headView" destination="D92-HC-mpK" id="22A-dh-nh8"/>
-                <outlet property="pdfAlterImageView" destination="s0C-ze-8OJ" id="3Y5-Ft-0Qo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,9 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0C-ze-8OJ" customClass="JJPDFAlterImageView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDb-if-brV">
                     <rect key="frame" x="0.0" y="583" width="320" height="49"/>
                     <subviews>

@@ -15,14 +15,16 @@
 #import "JJPDFShowViewController.h"
 #import "UIAlertView+Blocks.h"
 #import "UIActionSheet+Blocks.h"
+#import "JJRedactImageViewController.h"
 
-@interface JJPDFAlterViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface JJPDFAlterViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,JJRedactImageDelegate>
 
-@property (weak, nonatomic) IBOutlet JJPDFAlterImageView *pdfAlterImageView;
+@property (strong, nonatomic) JJPDFAlterImageView *pdfAlterImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLayoutConstraint;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIView *headView;
+@property (strong, nonatomic) JJRedactImageViewController *redactImageVC;
 
 @property (strong, nonatomic) MyCoreData *coreData;
 
@@ -34,13 +36,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     CGRect rect = [UIScreen mainScreen].bounds;
     self.view.frame = rect;
     
-    _pdfAlterImageView.image = _image;
-    _pdfAlterImageView.frame = self.view.bounds;
+    self.pdfAlterImageView.image = _image;
+    self.pdfAlterImageView.frame = rect;
+
+    [self.view insertSubview:self.pdfAlterImageView atIndex:0];
     
-    NSLog(@"_pdfAlterImageView.frame = %@",NSStringFromCGRect(_pdfAlterImageView.frame));
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognizer:)];
     [_pdfAlterImageView addGestureRecognizer:tap];
 }
@@ -144,6 +148,7 @@
     [alertView show];
 }
 
+//保存操作
 - (void) saveData:(UIImage *) image
 {
     // 如果没有进行了操作，则保存至数据库
@@ -205,7 +210,7 @@
     }
     
 }
-
+//添加图片
 - (IBAction)addImage:(id)sender {
     
     __weak typeof(self) weakSelf = self;
@@ -223,7 +228,7 @@
 
     [sheet showInView:self.view];
 }
-
+//相机设置
 - (void) setupImagePickerController:(UIImagePickerControllerSourceType) type
 {
     UIImagePickerControllerSourceType sourceType = type;
@@ -245,20 +250,34 @@
     }];
 }
 
-/*
- * MARK： UIImagePickerController 代理方法
- */
+// UIImagePickerController 代理方法
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo
 {
     __weak typeof(self) weakSelf = self;
     [picker dismissViewControllerAnimated:YES completion:^{
-        
+        if (image) {
+            weakSelf.redactImageVC = nil;
+            weakSelf.redactImageVC = [[JJRedactImageViewController alloc] init];
+            weakSelf.redactImageVC.delegate = weakSelf;
+            weakSelf.redactImageVC.image = image;
+            [weakSelf presentViewController:weakSelf.redactImageVC animated:YES completion:^{
+                
+            }];
+        }
     }];
-#warning 今天就写到这里了，明天从这里开始
-    NSLog(@"%@",image);
 }
 
+/*
+ * MARK : 图片处理回调方法
+ */
+- (void) redactImage:(UIImage *) image imageFrame:(CGRect)frame
+{
+    [self.pdfAlterImageView addImageView:image imageFrame:frame];
+}
+
+//删除一张图片
 - (IBAction)delImage:(id)sender {
+    [self.pdfAlterImageView cleanImageView];
 }
 
 - (MyCoreData *) coreData
@@ -267,6 +286,15 @@
         _coreData = [[MyCoreData alloc] init];
     }
     return _coreData;
+}
+
+- (JJPDFAlterImageView *) pdfAlterImageView
+{
+    if (!_pdfAlterImageView) {
+        _pdfAlterImageView = [[JJPDFAlterImageView alloc] init];
+    }
+    
+    return _pdfAlterImageView;
 }
 
 @end

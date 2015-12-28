@@ -21,7 +21,6 @@
 
 /*当前页**/
 @property (nonatomic) NSInteger pageIndex;
-
 /*最大的页数**/
 @property (nonatomic) NSInteger maxPage;
 /*初始化数据操作类**/
@@ -40,7 +39,13 @@
     
     [self.view addSubview:self.pageViewController.view];
     
-    _pageIndex = 1;
+    NSNumber *number = [self inquireData:self.filePath.lastPathComponent];
+    
+    if (number) {
+        _pageIndex = number.intValue;
+    } else {
+        _pageIndex = 1;
+    }
     
     [self setupPageViewController];
     [self setupBtn];
@@ -129,6 +134,8 @@
         return nil;
     }
     _pageIndex = showVC.page + 1;
+    //添加进本地持久化保存
+    [self addUserData:@(_pageIndex) forKey:_filePath.lastPathComponent];
     return [self PDFShowViewControllerFrameIndex:(showVC.page + 1)];
 }
 
@@ -138,8 +145,9 @@
 //当completed = NO时，表示翻页并没有成功，所以将_pageIndex 重置为初始值，避免bug
     if (!completed) {
         _pageIndex = showVc.page;
+        //添加进本地持久化保存
+        [self addUserData:@(_pageIndex) forKey:_filePath.lastPathComponent];
     }
-    NSLog(@"showVc.page = %ld  completed = %d",showVc.page,completed);
 }
 
 /*
@@ -170,6 +178,21 @@
     }
     
     return pdfVC;
+}
+
+//添加
+- (void) addUserData:(id) object forKey:(NSString *) key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:object forKey:key];
+    
+}
+//查询
+- (id) inquireData:(NSString *) key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    id data = [defaults objectForKey:key];
+    return data;
 }
 
 /*

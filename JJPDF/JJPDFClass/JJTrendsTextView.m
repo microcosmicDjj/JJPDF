@@ -8,6 +8,7 @@
 
 #import "JJTrendsTextView.h"
 #import "UIView+LayoutMethods.h"
+#import "UIView+JJMoveView.h"
 
 @interface JJTrendsTextView () 
 
@@ -41,53 +42,37 @@
         //键盘监听
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeSelfSizeWithStringSize) name:UITextViewTextDidChangeNotification object:self];
 
-        //使其移动
+        //可以自由拉动
         [self setMovePanGestureRecognizer];
         
-        //可以自由拉动
-        [self setShiftPanGestureRecognizer];
+        [self openMove:^(CGPoint point) {
+            
+        }];
     }
     return self;
 }
 
-//MARK : 使其移动
-- (void)  setShiftPanGestureRecognizer
-{
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(moveTo:)];
-    [self addGestureRecognizer:pan];
-}
-
+//MARK : 可以自由拉动
 - (void) setMovePanGestureRecognizer
 {
     
     self.leftView.tag =  1;
     [self addSubview:self.leftView];
     
-    UIPanGestureRecognizer *leftPan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(moveView:)];
+    UIPanGestureRecognizer *leftPan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(moveLeftRightView:)];
     [self.leftView addGestureRecognizer:leftPan];
 
     self.rigthView.tag =  2;
     [self addSubview:self.rigthView];
     
-    UIPanGestureRecognizer *rigthPan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(moveView:)];
+    UIPanGestureRecognizer *rigthPan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(moveLeftRightView:)];
     [self.rigthView addGestureRecognizer:rigthPan];
     
     _selfW = self.width;
 }
 
 
-- (void) moveTo:(UIPanGestureRecognizer *) tap
-{
-    CGPoint translation = [tap translationInView:self];
-    
-    tap.view.centerX = tap.view.center.x + translation.x;
-    tap.view.centerY = tap.view.center.y + translation.y;
-    [tap setTranslation:CGPointZero inView:self];
-    
-    [self astrict];
-}
-
-- (void) moveView:(UIPanGestureRecognizer *) tap
+- (void) moveLeftRightView:(UIPanGestureRecognizer *) tap
 {
     CGPoint translation = [tap translationInView:self];
     tap.view.centerX = tap.view.center.x + translation.x;
@@ -109,25 +94,6 @@
     if (tap.state == UIGestureRecognizerStateEnded){
         _selfW = self.width;
     }
-}
-
-
-//限制约束
-- (void) astrict
-{
-    if(self.x < 0){
-        self.x = 0;
-    }
-    if(self.y < 0){
-        self.y = 0;
-    }
-    if (self.width + self.x > self.superview.width) {
-        self.x = self.superview.width - self.width;
-    }
-    if (self.height + self.y > self.superview.height) {
-        self.y = self.superview.height - self.height;
-    }
-    
 }
 
 //MARK : 接受通知

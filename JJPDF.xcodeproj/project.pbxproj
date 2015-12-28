@@ -10,6 +10,13 @@
 		042A8BDE1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A8BDB1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.m */; };
 		042A8BDF1C23A8F70054C74B /* PDFAlterRecordTabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A8BDD1C23A8F70054C74B /* PDFAlterRecordTabel.m */; };
 		042A8BE21C23A9660054C74B /* MyCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A8BE11C23A9660054C74B /* MyCoreData.m */; };
+		0449D59F1C2CCC5D0084CFFE /* JJRedactImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D59D1C2CCC5D0084CFFE /* JJRedactImageViewController.m */; };
+		0449D5A01C2CCC5D0084CFFE /* JJRedactImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0449D59E1C2CCC5D0084CFFE /* JJRedactImageViewController.xib */; };
+		0449D5A31C2CE9350084CFFE /* UIView+JJMoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D5A21C2CE9350084CFFE /* UIView+JJMoveView.m */; };
+		0449D5A61C2D0E790084CFFE /* 裁剪-自由裁剪@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0449D5A41C2D0E790084CFFE /* 裁剪-自由裁剪@2x.png */; };
+		0449D5A71C2D0E790084CFFE /* 裁剪-自由裁剪@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0449D5A51C2D0E790084CFFE /* 裁剪-自由裁剪@3x.png */; };
+		0449D5AA1C2D232E0084CFFE /* JJTrendsImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D5A91C2D232E0084CFFE /* JJTrendsImageView.m */; };
+		0449D5B01C2D344D0084CFFE /* UIView+JJExpansion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0449D5AF1C2D344D0084CFFE /* UIView+JJExpansion.m */; };
 		0468086E1C1EAF1200423C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468086D1C1EAF1200423C16 /* main.m */; };
 		046808711C1EAF1200423C16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046808701C1EAF1200423C16 /* AppDelegate.m */; };
 		046808741C1EAF1200423C16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046808731C1EAF1200423C16 /* ViewController.m */; };
@@ -77,6 +84,17 @@
 		042A8BDD1C23A8F70054C74B /* PDFAlterRecordTabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFAlterRecordTabel.m; sourceTree = "<group>"; };
 		042A8BE01C23A9660054C74B /* MyCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoreData.h; sourceTree = "<group>"; };
 		042A8BE11C23A9660054C74B /* MyCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoreData.m; sourceTree = "<group>"; };
+		0449D59C1C2CCC5D0084CFFE /* JJRedactImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJRedactImageViewController.h; sourceTree = "<group>"; };
+		0449D59D1C2CCC5D0084CFFE /* JJRedactImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJRedactImageViewController.m; sourceTree = "<group>"; };
+		0449D59E1C2CCC5D0084CFFE /* JJRedactImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJRedactImageViewController.xib; sourceTree = "<group>"; };
+		0449D5A11C2CE9350084CFFE /* UIView+JJMoveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JJMoveView.h"; sourceTree = "<group>"; };
+		0449D5A21C2CE9350084CFFE /* UIView+JJMoveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JJMoveView.m"; sourceTree = "<group>"; };
+		0449D5A41C2D0E790084CFFE /* 裁剪-自由裁剪@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "裁剪-自由裁剪@2x.png"; sourceTree = "<group>"; };
+		0449D5A51C2D0E790084CFFE /* 裁剪-自由裁剪@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "裁剪-自由裁剪@3x.png"; sourceTree = "<group>"; };
+		0449D5A81C2D232E0084CFFE /* JJTrendsImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTrendsImageView.h; sourceTree = "<group>"; };
+		0449D5A91C2D232E0084CFFE /* JJTrendsImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTrendsImageView.m; sourceTree = "<group>"; };
+		0449D5AE1C2D344D0084CFFE /* UIView+JJExpansion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JJExpansion.h"; sourceTree = "<group>"; };
+		0449D5AF1C2D344D0084CFFE /* UIView+JJExpansion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JJExpansion.m"; sourceTree = "<group>"; };
 		046808691C1EAF1200423C16 /* JJPDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJPDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0468086D1C1EAF1200423C16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0468086F1C1EAF1200423C16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -208,6 +226,8 @@
 		0468086B1C1EAF1200423C16 /* JJPDF */ = {
 			isa = PBXGroup;
 			children = (
+				0449D5A41C2D0E790084CFFE /* 裁剪-自由裁剪@2x.png */,
+				0449D5A51C2D0E790084CFFE /* 裁剪-自由裁剪@3x.png */,
 				04F82E911C2BCD4400330DB8 /* UIAlertView-Blocks */,
 				04CDF74A1C279E8200AC5BC0 /* IQKeyBoardManager */,
 				046808A21C1EB04F00423C16 /* JJPDFClass */,
@@ -254,6 +274,7 @@
 		046808A21C1EB04F00423C16 /* JJPDFClass */ = {
 			isa = PBXGroup;
 			children = (
+				04D5C29E1C200293006BDDD4 /* JJPDFViewConstant.h */,
 				04FA127B1C22A66200D5D617 /* JJPDFMainViewController.h */,
 				04FA127C1C22A66200D5D617 /* JJPDFMainViewController.m */,
 				04FA127D1C22A66200D5D617 /* JJPDFMainViewController.xib */,
@@ -263,25 +284,33 @@
 				04FA12731C228DB800D5D617 /* JJPDFAlterViewController.h */,
 				04FA12741C228DB800D5D617 /* JJPDFAlterViewController.m */,
 				04FA12751C228DB800D5D617 /* JJPDFAlterViewController.xib */,
-				04D5C29E1C200293006BDDD4 /* JJPDFViewConstant.h */,
+				0449D59C1C2CCC5D0084CFFE /* JJRedactImageViewController.h */,
+				0449D59D1C2CCC5D0084CFFE /* JJRedactImageViewController.m */,
+				0449D59E1C2CCC5D0084CFFE /* JJRedactImageViewController.xib */,
 				046808A31C1EB0B700423C16 /* JJPDFView.h */,
 				046808A41C1EB0B700423C16 /* JJPDFView.m */,
-				04E7568D1C21374000113207 /* JJGainImage.h */,
-				04E7568E1C21374000113207 /* JJGainImage.m */,
 				04FA12701C228D0D00D5D617 /* JJPDFAlterImageView.h */,
 				04FA12711C228D0D00D5D617 /* JJPDFAlterImageView.m */,
+				04E5368F1C267C4C0074FDBA /* JJTrendsTextView.h */,
+				04E536901C267C4C0074FDBA /* JJTrendsTextView.m */,
+				0449D5A81C2D232E0084CFFE /* JJTrendsImageView.h */,
+				0449D5A91C2D232E0084CFFE /* JJTrendsImageView.m */,
+				042A8BE01C23A9660054C74B /* MyCoreData.h */,
+				042A8BE11C23A9660054C74B /* MyCoreData.m */,
+				04E7568D1C21374000113207 /* JJGainImage.h */,
+				04E7568E1C21374000113207 /* JJGainImage.m */,
 				04FA12781C22929500D5D617 /* JJPDFAlterModel.h */,
 				04FA12791C22929500D5D617 /* JJPDFAlterModel.m */,
+				04E536911C267C4C0074FDBA /* UIView+LayoutMethods.h */,
+				04E536921C267C4C0074FDBA /* UIView+LayoutMethods.m */,
+				0449D5A11C2CE9350084CFFE /* UIView+JJMoveView.h */,
+				0449D5A21C2CE9350084CFFE /* UIView+JJMoveView.m */,
+				0449D5AE1C2D344D0084CFFE /* UIView+JJExpansion.h */,
+				0449D5AF1C2D344D0084CFFE /* UIView+JJExpansion.m */,
 				042A8BDA1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.h */,
 				042A8BDB1C23A8F70054C74B /* PDFAlterRecordTabel+CoreDataProperties.m */,
 				042A8BDC1C23A8F70054C74B /* PDFAlterRecordTabel.h */,
 				042A8BDD1C23A8F70054C74B /* PDFAlterRecordTabel.m */,
-				042A8BE01C23A9660054C74B /* MyCoreData.h */,
-				042A8BE11C23A9660054C74B /* MyCoreData.m */,
-				04E5368F1C267C4C0074FDBA /* JJTrendsTextView.h */,
-				04E536901C267C4C0074FDBA /* JJTrendsTextView.m */,
-				04E536911C267C4C0074FDBA /* UIView+LayoutMethods.h */,
-				04E536921C267C4C0074FDBA /* UIView+LayoutMethods.m */,
 			);
 			path = JJPDFClass;
 			sourceTree = "<group>";
@@ -488,8 +517,11 @@
 				04CDF7761C279E8200AC5BC0 /* IQKeyboardManager.bundle in Resources */,
 				049A09801C23E4160017EF44 /* oss_sdk.pdf in Resources */,
 				0468087C1C1EAF1200423C16 /* Assets.xcassets in Resources */,
+				0449D5A61C2D0E790084CFFE /* 裁剪-自由裁剪@2x.png in Resources */,
 				049A09841C23EDD10017EF44 /* 3.png in Resources */,
 				04CDF7781C27A3AA00AC5BC0 /* 2.png in Resources */,
+				0449D5A01C2CCC5D0084CFFE /* JJRedactImageViewController.xib in Resources */,
+				0449D5A71C2D0E790084CFFE /* 裁剪-自由裁剪@3x.png in Resources */,
 				04FA127F1C22A66200D5D617 /* JJPDFMainViewController.xib in Resources */,
 				04FA12771C228DB800D5D617 /* JJPDFAlterViewController.xib in Resources */,
 				046808A71C1EB9CF00423C16 /* 6666.pdf in Resources */,
@@ -522,6 +554,7 @@
 				04CDF76E1C279E8200AC5BC0 /* IQKeyboardManager.m in Sources */,
 				04CDF76F1C279E8200AC5BC0 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				04FA127E1C22A66200D5D617 /* JJPDFMainViewController.m in Sources */,
+				0449D5B01C2D344D0084CFFE /* UIView+JJExpansion.m in Sources */,
 				04F82E981C2BCD4400330DB8 /* RIButtonItem.m in Sources */,
 				0468087A1C1EAF1200423C16 /* JJPDF.xcdatamodeld in Sources */,
 				04CDF76D1C279E8200AC5BC0 /* IQUIWindow+Hierarchy.m in Sources */,
@@ -533,6 +566,7 @@
 				04CDF7741C279E8200AC5BC0 /* IQToolbar.m in Sources */,
 				046808711C1EAF1200423C16 /* AppDelegate.m in Sources */,
 				04CDF7701C279E8200AC5BC0 /* IQSegmentedNextPrevious.m in Sources */,
+				0449D59F1C2CCC5D0084CFFE /* JJRedactImageViewController.m in Sources */,
 				04FA12721C228D0D00D5D617 /* JJPDFAlterImageView.m in Sources */,
 				04E536961C267C4C0074FDBA /* UIView+LayoutMethods.m in Sources */,
 				0468086E1C1EAF1200423C16 /* main.m in Sources */,
@@ -541,7 +575,9 @@
 				04CDF7731C279E8200AC5BC0 /* IQTitleBarButtonItem.m in Sources */,
 				042A8BE21C23A9660054C74B /* MyCoreData.m in Sources */,
 				04FA127A1C22929500D5D617 /* JJPDFAlterModel.m in Sources */,
+				0449D5AA1C2D232E0084CFFE /* JJTrendsImageView.m in Sources */,
 				04FA12661C22584B00D5D617 /* JJPDFShowViewController.m in Sources */,
+				0449D5A31C2CE9350084CFFE /* UIView+JJMoveView.m in Sources */,
 				04E536951C267C4C0074FDBA /* JJTrendsTextView.m in Sources */,
 				046808A51C1EB0B700423C16 /* JJPDFView.m in Sources */,
 				04CDF7711C279E8200AC5BC0 /* IQTextView.m in Sources */,

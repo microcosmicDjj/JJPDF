@@ -15,11 +15,6 @@
  */
 + (UIImage *) gainImage:(UIView *) view;
 /*
- * MARK: 获取rect的范围内的截图
- */
-+ (UIImage *) gainImage:(UIView *) view frame:(CGRect) rect;
-
-/*
  * MARK: 将image写入文件
  */
 + (NSString *) writeImage:(UIImage *) image;
@@ -32,4 +27,9 @@
  * MARK: 沙盒路径
  */
 + (NSString *) documentDirectoryStr;
+/*
+ * MARK: 一个不会变形的image
+ */
++ (UIImage *)resizeWithImageName:(NSString *)name;
+
 @end

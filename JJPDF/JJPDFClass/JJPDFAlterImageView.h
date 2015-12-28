@@ -10,32 +10,57 @@
 
 @interface JJPDFAlterImageView : UIView
 
-/*设置颜色**/
+//MARK:设置颜色
 @property (nonatomic, strong) UIColor *lineColor;
 
-/*设置线条的宽度**/
+//MARK:设置线条的宽度
 @property (nonatomic) CGFloat lineWidth;
 
-/*图片**/
+//MARK:图片
 @property (nonatomic, strong) UIImage *image;
 
-/*是否清除了记录**/
+//MARK:是否清除了记录
 @property (nonatomic) BOOL cleanRecord;
 
-/*返回一条线**/
+/*
+ * MARK: 清除一条线
+ */
 - (void) back;
-/*全部返回**/
+/*
+ * MARK: 全部返回
+ */
 - (void) allBack;
-/*添加一个文本框**/
+
+/*
+ * MARK: 添加一个文本框
+ */
 - (void) addTextView;
 
-/*清除一个输入框**/
+/*
+ * MARK: 清除一个输入框
+ */
 - (void) cleanTextView;
-/*清除所有的输入框**/
+/*
+ * MARK: 清除所有的输入框
+ */
 - (void) cleanAllTextView;
 
+/*
+ * MARK: 添加一张图片
+ */
+- (void) addImageView:(UIImage *) image imageFrame:(CGRect) frame;
 
-/*保存图片**/
+/*
+ * MARK: 清除一张图片
+ */
+- (void) cleanImageView;
+/*
+ * MARK: 清除所有图片
+ */
+- (void) cleanAllImageView;
+/*
+ * MARK: 保存图片
+ */
 - (UIImage *) saveImage;
 
 @end

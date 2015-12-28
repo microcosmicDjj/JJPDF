@@ -11,11 +11,16 @@
 #import "JJPDFAlterModel.h"
 #import "JJTrendsTextView.h"
 #import "JJGainImage.h"
+#import "JJTrendsImageView.h"
+#import "JJPDFViewConstant.h"
+#import "UIView+JJMoveView.h"
+#import "UIView+JJExpansion.h"
 
 @interface JJPDFAlterImageView ()
 
 @property (nonatomic, strong) NSMutableArray *alterModels;
 @property (nonatomic, strong) NSMutableArray *trendsTextViews;
+@property (nonatomic, strong) NSMutableArray *trendsImageViews;
 
 @end
 
@@ -171,6 +176,27 @@
         [self.alterModels removeObject:model];
     }
 }
+
+//清除一张图片
+- (void) cleanImageView
+{
+    JJTrendsImageView *imageView = self.trendsImageViews.lastObject;
+    
+    if (imageView) {
+        [imageView removeFromSuperview];
+        [self.trendsImageViews removeObject:imageView];
+    }
+}
+
+//清除所有图片
+- (void) cleanAllImageView
+{
+    for (JJTrendsImageView *imageView in self.trendsImageViews) {
+        [imageView removeFromSuperview];
+    }
+    [self.trendsImageViews removeAllObjects];
+
+}
 /*保存图片**/
 - (UIImage *) saveImage
 {
@@ -195,6 +221,28 @@
     return [JJGainImage gainImage:self];
 }
 
+/*
+ * MARK: 添加图片
+ */
+
+- (void) addImageView:(UIImage *) image imageFrame:(CGRect) frame
+{
+    JJTrendsImageView *imageView = [[JJTrendsImageView alloc] init];
+    imageView.image = image;
+    imageView.frame = frame;
+    imageView.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+    [self addSubview:imageView];
+    
+    [imageView openMove:^(CGPoint point) {
+        
+    }];
+//    __weak typeof(self) weakSelf = self;
+    [imageView openExpansionGesticulationBlock:^(CGPoint point) {
+//        NSLog(@"weakSelf.moveImageView.image.size = %@",NSStringFromCGSize(imageView.image.size));
+    }];
+    
+    [self.trendsImageViews addObject:imageView];
+}
 
 /*
  * MARK: 懒加载
@@ -214,6 +262,14 @@
     }
     
     return _trendsTextViews;
+}
+
+- (NSMutableArray *) trendsImageViews
+{
+    if (!_trendsImageViews) {
+        _trendsImageViews = [[NSMutableArray alloc] init];
+    }
+    return _trendsImageViews;
 }
 
 - (void) setImage:(UIImage *)image

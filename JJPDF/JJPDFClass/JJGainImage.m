@@ -29,25 +29,6 @@
 }
 
 /*
- * MARK: 获取view的全屏截图
- */
-+ (UIImage *) gainImage:(UIView *) view frame:(CGRect) rect
-{
-    CGSize size = view.bounds.size;
-    
-    UIGraphicsBeginImageContextWithOptions(size, YES, 0);
-    
-    [view drawViewHierarchyInRect:rect afterScreenUpdates:YES];
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
-
-/*
  * MARK: 写入文件
  */
 + (NSString *) writeImage:(UIImage *) image
@@ -68,8 +49,16 @@
 
 + (NSString *) documentDirectoryStr
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    return [paths objectAtIndex:0];
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    NSString *pathDocuments=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *createPath=[NSString stringWithFormat:@"%@/pdfImage",pathDocuments];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:createPath]) {
+        [fileManager createDirectoryAtPath:createPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    else {
+    }
+    return createPath;
 }
 /*
  * MARK: 保留文件名
@@ -81,6 +70,17 @@
     NSString *fileName = filePaths.lastObject;
 
     return fileName;
+}
+
+//返回一个可拉伸的图片
++ (UIImage *)resizeWithImageName:(NSString *)name
+{
+    UIImage *normal = [UIImage imageNamed:name];
+    
+    CGFloat w = normal.size.width*0.5;
+    CGFloat h = normal.size.height*0.5;
+    //传入上下左右不需要拉升的编剧，只拉伸中间部分
+    return [normal resizableImageWithCapInsets:UIEdgeInsetsMake(h, w, h, w)];
 }
 
 @end
