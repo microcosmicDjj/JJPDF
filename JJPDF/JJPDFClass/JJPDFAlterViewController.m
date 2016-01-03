@@ -24,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLayoutConstraint;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIView *headView;
-@property (strong, nonatomic) JJRedactImageViewController *redactImageVC;
 
 @property (strong, nonatomic) MyCoreData *coreData;
 
@@ -215,7 +214,7 @@
     
     __weak typeof(self) weakSelf = self;
     RIButtonItem *photoItem = [RIButtonItem itemWithLabel:@"相册中选取" action:^{
-        [weakSelf setupImagePickerController:UIImagePickerControllerSourceTypePhotoLibrary];
+        [weakSelf setupImagePickerController:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
     }];
     
     RIButtonItem *shootItem = [RIButtonItem itemWithLabel:@"拍照" action:^{
@@ -241,7 +240,7 @@
     
     picker.delegate = self;
     
-    picker.allowsEditing=YES;
+//    picker.allowsEditing=YES;
     
     picker.sourceType=sourceType;
     
@@ -251,16 +250,32 @@
 }
 
 // UIImagePickerController 代理方法
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
     __weak typeof(self) weakSelf = self;
+    
+    UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    UIImageOrientation imageOrientation=image.imageOrientation;
+    if(imageOrientation!=UIImageOrientationUp)
+    {
+        // 原始图片可以根据照相时的角度来显示，但UIImage无法判定，于是出现获取的图片会向左转９０度的现象。
+        // 以下为调整图片角度的部分
+        UIGraphicsBeginImageContext(image.size);
+        [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        // 调整图片角度完毕
+    }
     [picker dismissViewControllerAnimated:YES completion:^{
         if (image) {
-            weakSelf.redactImageVC = nil;
-            weakSelf.redactImageVC = [[JJRedactImageViewController alloc] init];
-            weakSelf.redactImageVC.delegate = weakSelf;
-            weakSelf.redactImageVC.image = image;
-            [weakSelf presentViewController:weakSelf.redactImageVC animated:YES completion:^{
+            
+            
+            JJRedactImageViewController *redactImageVC = nil;
+            redactImageVC = [[JJRedactImageViewController alloc] init];
+            redactImageVC.delegate = weakSelf;
+            redactImageVC.image = image;
+            [weakSelf presentViewController:redactImageVC animated:YES completion:^{
                 
             }];
         }

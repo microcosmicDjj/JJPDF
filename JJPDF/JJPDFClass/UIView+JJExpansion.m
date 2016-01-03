@@ -21,7 +21,7 @@ ExpansionBlock _myblock;
     
     for (int i = 0;i < 4; i++) {
         UIView *moveView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-        moveView.backgroundColor = [UIColor redColor];
+//        moveView.backgroundColor = [UIColor redColor];
         moveView.tag = i;
         [self setupFrameMoveView:moveView];
         [self addSubview:moveView];

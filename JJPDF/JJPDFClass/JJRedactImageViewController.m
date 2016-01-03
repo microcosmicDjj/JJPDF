@@ -50,7 +50,7 @@
     self.imageView.frame = CGRectMake(0, 0, imageViewWidth,imageViewHigth);
     self.imageView.center = CGPointMake(rect.size.width / 2, rect.size.height / 2);
     
-    [self.view addSubview:self.imageView];
+    [self.view insertSubview:self.imageView atIndex:0];
 }
 
 
